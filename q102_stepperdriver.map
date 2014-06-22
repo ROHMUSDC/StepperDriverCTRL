@@ -1,0 +1,274 @@
+RLU8 Object Linker, Ver.1.51.2 Linkage Information
+[Mon Jun 16 19:44:18 2014]
+
+
+                         ------------------
+                          Control Synopsis
+                         ------------------
+
+I/O controls:    D  SD NS NA
+Other controls: CC STACK( 0080H(128) )
+                COMB( $$content_of_init $$end_of_init )
+                COMB( $$init_info $$init_info_end )
+
+
+
+                        ------------------------
+                         Object Module Synopsis
+                        ------------------------
+                                                                Creator
+Module Name           File Name                                 CCU8     RASU8
+-----------           ---------                                 -----    -----
+main                  _output\_obj\main.obj                     3.41     1.61
+ml610102              _output\_obj\ml610102.obj                 -.--     1.61
+DSUBSW                C:\Users\cschell\U8DEV~1\Lib\doubleu8.lib -.--     1.04
+DADDSW                C:\Users\cschell\U8DEV~1\Lib\doubleu8.lib -.--     1.04
+EADDSW                C:\Users\cschell\U8DEV~1\Lib\doubleu8.lib -.--     1.04
+SHIFTSW               C:\Users\cschell\U8DEV~1\Lib\doubleu8.lib -.--     1.04
+ROUNSW                C:\Users\cschell\U8DEV~1\Lib\doubleu8.lib -.--     1.04
+ETODSW                C:\Users\cschell\U8DEV~1\Lib\doubleu8.lib -.--     1.04
+NORMSW                C:\Users\cschell\U8DEV~1\Lib\doubleu8.lib -.--     1.04
+DTOESW                C:\Users\cschell\U8DEV~1\Lib\doubleu8.lib -.--     1.04
+DILDSW                C:\Users\cschell\U8DEV~1\Lib\doubleu8.lib -.--     1.04
+LTOESW                C:\Users\cschell\U8DEV~1\Lib\doubleu8.lib -.--     1.04
+DMULSW                C:\Users\cschell\U8DEV~1\Lib\doubleu8.lib -.--     1.04
+EMULSW                C:\Users\cschell\U8DEV~1\Lib\doubleu8.lib -.--     1.04
+DTOLSW                C:\Users\cschell\U8DEV~1\Lib\doubleu8.lib -.--     1.04
+ETOLSW                C:\Users\cschell\U8DEV~1\Lib\doubleu8.lib -.--     1.04
+IMULSW                C:\Users\cschell\U8DEV~1\Lib\longu8.lib   -.--     1.04
+
+
+Number of Modules: 17
+
+Number of Symbols:
+ +---------------------------------------------------------------------------+
+ |          | CODE | DATA | BIT  |NVDATA|NVBIT |TABLE |NUMBER| TBIT || total |
+ |----------+------+------+------+------+------+------+------+------++-------|
+ | SEGMENT  |    64|     3|     0|     0|     0|     8|      |      ||     75|
+ |----------+------+------+------+------+------+------+------+------++-------|
+ | COMMUNAL |     0|     0|     0|     0|     0|     0|      |      ||      0|
+ |----------+------+------+------+------+------+------+------+------++-------|
+ | PUBLIC   |    56|     8|     0|     0|     0|     0|     0|     0||     64|
+ +---------------------------------------------------------------------------+
+
+Target:  ML610102 
+Model:   SMALL
+
+
+Memory Map - Program memory space #0:
+      Type     Start      Stop
+     -----------------------------
+      ROM      00:0000    00:17FF
+
+Memory Map - Data memory space #0:
+      Type     Start      Stop
+     -----------------------------
+      RAM      00:E000    00:E0FF
+      RAM      00:F000    00:FFFF
+
+Memory Map - Memory space above #1:
+      Type     Start      Stop
+     -----------------------------
+      ROM      08:0000    08:17FF
+
+                         ------------------
+                          Segment Synopsis
+                         ------------------
+
+Link Map - Program memory space #0 ( ROMWINDOW: 0000 - 17FF )
+
+      Type     Start      Stop       Size              Name
+     -------------------------------------------------------
+      S CODE   00:0000    00:0001    0002(2)           (absolute)
+      S CODE   00:0002    00:0003    0002(2)           (absolute)
+      S CODE   00:0004    00:0005    0002(2)           (absolute)
+      S TABLE  00:0006    00:0025    0020(32)          $$NTABMachineStateAction$main
+      S TABLE  00:0026    00:0065    0040(64)          $$TABLE_SEGMENT
+      S TABLE  00:0066    00:0079    0014(20)          $$NINITTAB
+      S TABLE  00:007A    00:0081    0008(8)           $$init_info
+      S TABLE  00:0082    00:0083    0002(2)           $$init_info_end
+      S TABLE  00:0084    00:00C3    0040(64)          $$NTABButtonKnobCheck$main
+      S CODE   00:00C4    00:059D    04DA(1242)        $$ButtonKnobCheck$main
+      S CODE   00:059E    00:062D    0090(144)         $$NCODml610102sw
+      S CODE   00:062E    00:0641    0014(20)          $$myClockingPulse$main
+      S CODE   00:0642    00:075D    011C(284)         $$Set_LEDs$main
+      S CODE   00:075E    00:078B    002E(46)          $$EncoderPostion$main
+      S CODE   00:078C    00:078C    0000(0)           $$content_of_init
+      S CODE   00:078C    00:078D    0002(2)           $$end_of_init
+      S CODE   00:078E    00:07AD    0020(32)          $$normu8sw
+      S CODE   00:07AE    00:0911    0164(356)         $$ContinuousMode$main
+      S CODE   00:0912    00:0929    0018(24)          $$DisableController$main
+      S CODE   00:092A    00:092B    0002(2)           $$NOP_Long$main
+      S CODE   00:092C    00:094D    0022(34)          $$shiftu8sw
+      S CODE   00:094E    00:096F    0022(34)          $$ALL_LEDs_OFF$main
+      S CODE   00:0970    00:097B    000C(12)          $$roundu8sw
+      S CODE   00:097C    00:09B1    0036(54)          $$ndmulu8sw
+      S CODE   00:09B2    00:09C5    0014(20)          $$main_clrWDT$main
+      S CODE   00:09C6    00:09EF    002A(42)          $$ndtolu8sw
+      S CODE   00:09F0    00:0A25    0036(54)          $$ndaddu8sw
+      S CODE   00:0A26    00:0A4F    002A(42)          $$lloadu8sw
+      S CODE   00:0A50    00:0B49    00FA(250)         $$daddu8sw
+      S CODE   00:0B4A    00:0B71    0028(40)          $$dildu8sw
+      S CODE   00:0B72    00:0CAB    013A(314)         $$dmulu8sw
+      S CODE   00:0CAC    00:0CD5    002A(42)          $$imulu8sw
+      S CODE   00:0CD6    00:0D47    0072(114)         $$dloadu8sw
+      S CODE   00:0D48    00:0E09    00C2(194)         $$PortB_Low$main
+      S CODE   00:0E0A    00:0E2F    0026(38)          $$LEDStateC$main
+      S CODE   00:0E30    00:0E37    0008(8)           $$ZeroFrequency$main
+      S CODE   00:0E38    00:0E39    0002(2)           $$NOPxxx$main
+      S CODE   00:0E3A    00:0E3B    0002(2)           $$NOPyyy$main
+      S CODE   00:0E3C    00:0E73    0038(56)          $$LEDStateA$main
+      S CODE   00:0E74    00:0E97    0024(36)          $$LEDStateB$main
+      S CODE   00:0E98    00:0ED1    003A(58)          $$LEDStateD$main
+      S CODE   00:0ED2    00:0F0B    003A(58)          $$LEDStateE$main
+      S CODE   00:0F0C    00:0F55    004A(74)          $$PortA_Low$main
+      S CODE   00:0F56    00:1039    00E4(228)         $$StepCCW$main
+      S CODE   00:103A    00:1057    001E(30)          $$main$main
+      S CODE   00:1058    00:112B    00D4(212)         $$MachineStateAction$main
+      S CODE   00:112C    00:1169    003E(62)          $$PortA_Digital_Inputs$main
+      S CODE   00:116A    00:124B    00E2(226)         $$Initialization$main
+      S CODE   00:124C    00:1283    0038(56)          $$LEDStateA1$main
+      S CODE   00:1284    00:12BF    003C(60)          $$LEDStateA2$main
+      S CODE   00:12C0    00:12FB    003C(60)          $$LEDStateA3$main
+      S CODE   00:12FC    00:1337    003C(60)          $$LEDStateA4$main
+      S CODE   00:1338    00:135D    0026(38)          $$LEDStateC1$main
+      S CODE   00:135E    00:1387    002A(42)          $$LEDStateC2$main
+      S CODE   00:1388    00:139B    0014(20)          $$ndsubu8sw
+      S CODE   00:139C    00:1483    00E8(232)         $$EncoderDirection$main
+      S CODE   00:1484    00:14C1    003E(62)          $$lstoru8sw
+      S CODE   00:14C2    00:14E1    0020(32)          $$SetOSC$main
+      S CODE   00:14E2    00:1595    00B4(180)         $$dstoru8sw
+      S CODE   00:1596    00:1679    00E4(228)         $$StepCW$main
+>GAP<          00:167A    00:17DF    0166(358)         (ROM)
+      S CODE   00:17E0    00:17FF    0020(32)          (absolute)
+
+
+Link Map - Data memory space #0
+
+      Type     Start      Stop       Size              Name
+     -------------------------------------------------------
+      Q ROMWIN 00:0000    00:17FF    1800(6144)        (ROMWIN)
+>GAP<          00:E000.0  00:E05F.7  0060.0(96.0)      (RAM)
+      S DATA   00:E060    00:E0DF    0080(128)         $STACK
+      S DATA   00:E0E0    00:E0EB    000C(12)          $$NVARmain
+      S DATA   00:E0EC    00:E0FF    0014(20)          $$NINITVAR
+      Q SFR    00:F000    00:FFFF    1000(4096)        (SFR)
+
+
+Link Map - Memory space above #1
+
+      Type     Start      Stop       Size              Name
+     -------------------------------------------------------
+ ---
+      S TABLE  08:0000    08:17FF    1800(6144)        (absolute)
+
+
+Not Linked segments:
+
+      Module Name         Type       Size              Segment Name 
+     --------------------------------------------------------------
+      main
+                          CODE       0056(86)          $$MotorRampUp$main
+                          TABLE      0000(0)           $$NTABmain
+                          CODE       0030(48)          $$PinB0_PWM$main
+                          CODE       0026(38)          $$LEDStateC1A$main
+                          CODE       0026(38)          $$LEDStateC2A$main
+                          CODE       0002(2)           $$analog_comparator$main
+                          CODE       0038(56)          $$ALL_LEDs_ON$main
+                          CODE       0006(6)           $$EnableController$main
+                          CODE       0020(32)          $$NOP_ClkStep$main
+                          CODE       0022(34)          $$NOP10uS$main
+     --------------------------------------------------------------
+
+
+Total size (CODE  ) = 015DC   (5596)
+Total size (DATA  ) = 000A0   (160)
+Total size (BIT   ) = 00000.0 (0.0)
+Total size (NVDATA) = 00000   (0)
+Total size (NVBIT ) = 00000.0 (0.0)
+Total size (TABLE ) = 018BE   (6334)
+
+          -----------------------
+           Symbol Table Synopsis
+          -----------------------
+
+Module         Value     Type         Symbol
+------         -----     ----------   ------
+main
+               00:0642   Pub CODE     _Set_LEDs
+               00:09B2   Pub CODE     _main_clrWDT
+               00:1596   Pub CODE     _StepCW
+               00:075E   Pub CODE     _EncoderPostion
+               00:112C   Pub CODE     _PortA_Digital_Inputs
+               00:103A   Pub CODE     _main
+               00:092A   Pub CODE     _NOP_Long
+               00:0E30   Pub CODE     _ZeroFrequency
+               00:07AE   Pub CODE     _ContinuousMode
+               00:0E3A   Pub CODE     _NOPyyy
+               00:0E38   Pub CODE     _NOPxxx
+               00:139C   Pub CODE     _EncoderDirection
+               00:12FC   Pub CODE     _LEDStateA4
+               00:1338   Pub CODE     _LEDStateC1
+               00:135E   Pub CODE     _LEDStateC2
+               00:124C   Pub CODE     _LEDStateA1
+               00:1284   Pub CODE     _LEDStateA2
+               00:12C0   Pub CODE     _LEDStateA3
+               00:0D48   Pub CODE     _PortB_Low
+               00:1058   Pub CODE     _MachineStateAction
+               00:094E   Pub CODE     _ALL_LEDs_OFF
+               00:00C4   Pub CODE     _ButtonKnobCheck
+               00:0F56   Pub CODE     _StepCCW
+               00:0F0C   Pub CODE     _PortA_Low
+               00:0912   Pub CODE     _DisableController
+               00:0E3C   Pub CODE     _LEDStateA
+               00:0E74   Pub CODE     _LEDStateB
+               00:0E0A   Pub CODE     _LEDStateC
+               00:0E98   Pub CODE     _LEDStateD
+               00:0ED2   Pub CODE     _LEDStateE
+               00:062E   Pub CODE     _myClockingPulse
+               00:E0F4   Pub DATA     _AbsolutePosition
+               00:E0F2   Pub DATA     _button_flag
+               00:E0EE   Pub DATA     _EncoderPosition
+               00:E0F0   Pub DATA     _previous_encoder_position
+               00:E0F8   Pub DATA     _previousDirection
+               00:E0EC   Pub DATA     _mode
+               00:E0F6   Pub DATA     _direction
+               00:E0FA   Pub DATA     _Frequency
+               00:116A   Loc CODE     _Initialization
+               00:14C2   Loc CODE     _SetOSC
+               00:E0E0   Loc DATA     _FULL_STEP_LED
+               00:E0E1   Loc DATA     _DRIVER_EN_RED_LED
+               00:E0E2   Loc DATA     _HALF_STEP_A_LED
+               00:E0E3   Loc DATA     _CONTINUOUS_LED
+               00:E0E4   Loc DATA     _HALF_STEP_B_LED
+               00:E0E5   Loc DATA     _STEP_MODE_LED
+               00:E0E6   Loc DATA     _PASS_THRU_RED_LED
+               00:E0E7   Loc DATA     _DRIVER_EN_GREEN_LED
+               00:E0FE   Loc DATA     _CCWClkPlseWidth
+               00:E0E8   Loc DATA     _SINGLE_LED
+               00:E0E9   Loc DATA     _PASS_THRU_GREEN_LED
+               00:E0FC   Loc DATA     _CWClkPlseWidth
+               00:E0EA   Loc DATA     _QUARTER_STEP_LED
+               00:E0EB   Loc DATA     _BUFFER_OE_PIN
+
+Module         Value     Type         Symbol
+------         -----     ----------   ------
+ml610102
+              0000E0FF   Loc NUMBER   NEAR_RAM_END
+              0000E000   Loc NUMBER   NEAR_RAM_START
+               00:05C0   Loc CODE     __wdtcounter_clear
+              000000FF   Loc NUMBER   _$$WINVAL
+               00:17FF   Loc TABLE    _$$ROMWINEND
+               00:05A2   Loc CODE     $begin
+               00:0000   Loc TABLE    _$$ROMWINSTART
+               00:05D4   Loc CODE     __init_loop
+               00:0620   Loc CODE     __init_end
+               00:05A0   Loc CODE     $$brk_reset
+               00:05E0   Loc CODE     __skip
+               00:05FC   Loc CODE     __init_loop2
+               00:060E   Loc CODE     __loop_by_byte
+               00:05B0   Loc CODE     __near_ram_loop
+               00:059E   Pub CODE     $$start_up
+
+
+End of mapfile.

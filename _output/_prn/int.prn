@@ -1,0 +1,195 @@
+RASU8(ML610102)Relocatable Assembler, Ver.1.61.2    assemble list. page:   1 
+ Source File: _output\_obj\int.asm
+ Object File: _output\_obj\int.obj
+ Date  : 2014/06/12 Thu.[16:44]
+ Title : 
+## Loc. Object                   Line   Source Statements
+
+                                    1   ;; Compile Options : /TML610102 /MS /near /Icommon /Imain /Iirq /Itimer /Iclock /Itbc /SS 64 /SD /Oa /Ot /W 3 /Wc /Fa_output\_obj\ /Zs 
+                                    2   ;; Version Number  : Ver.3.41.8
+                                    3   ;; File Name       : int.c
+                                    4   
+                                    5   	type (ML610102) 
+                                    6   	model small, near
+                                    7   	$$int_2Hz$int segment code 2h #0h
+                                    8   	$$int_dummy$int segment code 2h #0h
+                                    9   	$$int_wdtint$int segment code 2h #0h
+                                   10   CVERSION 3.41.8
+                                   11   CSGLOBAL 03H 0000H "int_dummy" 08H 02H 01H 00H 90H 00H 00H 00H 07H
+                                   12   CSGLOBAL 03H 0000H "int_wdtint" 08H 02H 00H 00H 90H 02H 00H 00H 07H
+                                   13   CSGLOBAL 03H 0000H "int_2Hz" 08H 02H 02H 00H 90H 02H 00H 00H 07H
+                                   14   CSTRUCTTAG 0000H 0000H 0000H 0008H 00000001H "_Notag"
+                                   15   CSTRUCTMEM 52H 00000001H 00000000H "b0" 02H 00H 00H
+                                   16   CSTRUCTMEM 52H 00000001H 00000001H "b1" 02H 00H 00H
+                                   17   CSTRUCTMEM 52H 00000001H 00000002H "b2" 02H 00H 00H
+                                   18   CSTRUCTMEM 52H 00000001H 00000003H "b3" 02H 00H 00H
+                                   19   CSTRUCTMEM 52H 00000001H 00000004H "b4" 02H 00H 00H
+                                   20   CSTRUCTMEM 52H 00000001H 00000005H "b5" 02H 00H 00H
+                                   21   CSTRUCTMEM 52H 00000001H 00000006H "b6" 02H 00H 00H
+                                   22   CSTRUCTMEM 52H 00000001H 00000007H "b7" 02H 00H 00H
+                                   23   CTYPEDEF 0000H 0000H 43H "_BYTE_FIELD" 04H 00H 05H 00H 00H
+                                   24   CGLOBAL 00H 43H 0002H "XXX" 02H 00H 01H
+                                   25   CFILE 0001H 000003F4H "C:\\Users\\cschell\\U8DEV~1\\Inc\\ML610102.H"
+                                   26   CFILE 0000H 00000046H "src\\int.c"
+                                   27   
+  --------------------------       28   	rseg $$int_wdtint$int
+                                   29   CFUNCTION 0
+                                   30   
+00:0000                            31   _int_wdtint	:
+                                   32   CBLOCK 0 1 45
+                                   33   
+                                   34   ;;static void int_wdtint(void){
+                                   35   CLINEA 0000H 0001H 002DH 0001H 001DH
+00:0000 5E-F0                      36   	push	er0
+                                   37   CBLOCK 0 2 45
+                                   38   
+                                   39   ;;	__DI();
+                                   40   CLINEA 0000H 0001H 002EH 0002H 0008H
+00:0002 F7-EB                      41   	di
+                                   42   
+                                   43   ;;	do
+                                   44   CLINEA 0000H 0001H 002FH 0002H 0003H
+00:0004                            45   _$L3 :
+                                   46   CBLOCK 0 3 48
+                                   47   
+                                   48   ;;	WDTCON = 0x5a;    /* WDP: 0 -> 1 */
+                                   49   CLINEA 0000H 0001H 0031H 0002H 0024H
+00:0004 5A 00                      50   	mov	r0,	#05ah
+00:0006 11-90 0E-F0                51   	st	r0,	0f00eh
+                                   52   CBLOCKEND 0 3 50
+                                   53   
+                                   54   ;;	}while(WDP != 1);
+                                   55   CLINEA 0000H 0000H 0032H 0002H 0012H
+00:000A 81-A0 0E-F0                56   	tb	0f00eh.0
+00:000E FA C9                      57   	beq	_$L3
+                                   58   
+                                   59   ;;	WDTCON = 0xa5;        /* WDP: 1 -> 0 */
+                                   60   CLINEA 0000H 0001H 0033H 0002H 0028H
+00:0010 A5 00                      61   	mov	r0,	#0a5h
+00:0012 11-90 0E-F0                62   	st	r0,	0f00eh
+                                   63   CBLOCKEND 0 2 52
+                                   64   
+                                   65   ;;}
+                                   66   CLINEA 0000H 0001H 0034H 0001H 0001H
+00:0016 1E-F0                      67   	pop	er0
+00:0018 0F-FE                      68   	rti
+                                   69   CBLOCKEND 0 1 52
+                                   70   CFUNCTIONEND 0
+                                   71   
+                                   72   
+  --------------------------       73   	rseg $$int_dummy$int
+                                   74   CFUNCTION 1
+                                   75   
+00:0000                            76   _int_dummy	:
+                                   77   CBLOCK 1 1 54
+                                   78   
+                                   79   ;;static void int_dummy(void){
+                                   80   CLINEA 0000H 0001H 0036H 0001H 001CH
+                                   81   CBLOCK 1 2 54
+                                   82   
+                                   83   ;;	#pragma asm
+                                   84   CLINEA 0000H 0001H 0037H 0002H 000CH
+00:0000 33 00                      85   	mov r0,	#33h
+00:0002 11-90 02-F0                86   	st	r0,	FCON0		
+00:0006 FF-FF                      87   	brk
+                                   88   CBLOCKEND 1 2 60
+                                   89   
+                                   90   ;;}
+                                   91   CLINEA 0000H 0001H 003CH 0001H 0001H
+00:0008 0F-FE                      92   	rti
+                                   93   CBLOCKEND 1 1 60
+                                   94   CFUNCTIONEND 1
+                                   95   
+                                   96   
+  --------------------------       97   	rseg $$int_2Hz$int
+                                   98   CFUNCTION 2
+                                   99   
+00:0000                           100   _int_2Hz	:
+                                  101   CBLOCK 2 1 65
+                                  102   
+                                  103   ;;static void int_2Hz(void){
+                                  104   CLINEA 0000H 0001H 0041H 0001H 001AH
+00:0000 5E-F0                     105   	push	er0
+                                  106   CBLOCK 2 2 65
+                                  107   
+                                  108   ;;	XXX = XXX + 1;			//inc
+                                  109   CLINEA 0000H 0001H 0043H 0002H 0017H
+00:0002 12-90 00-00'              110   	l	er0,	NEAR _XXX
+00:0006 81 E0                     111   	add	er0,	#1 
+00:0008 13-90 00-00'              112   	st	er0,	NEAR _XXX
+                                  113   
+                                  114   ;;	PBD = XXX;
+                                  115   CLINEA 0000H 0001H 0044H 0002H 000BH
+00:000C 10-90 00-00'              116   	l	r0,	NEAR _XXX
+00:0010 11-90 58-F2               117   	st	r0,	0f258h
+                                  118   CBLOCKEND 2 2 69
+                                  119   
+                                  120   ;;}
+                                  121   CLINEA 0000H 0001H 0045H 0001H 0001H
+00:0014 1E-F0                     122   	pop	er0
+00:0016 0F-FE                     123   	rti
+                                  124   CBLOCKEND 2 1 69
+                                  125   CFUNCTIONEND 2
+                                  126   
+                                  127   	_XXX comm data 02h #00h
+                                  128   	extrn code near : _main
+                                  129   
+  --------------------------      130   	cseg #00h at 08h
+00:0008 00-00'                    131   	dw	_int_wdtint
+                                  132   
+  --------------------------      133   	cseg #00h at 0Ch
+00:000C 00-00'                    134   	dw	_int_dummy
+                                  135   
+  --------------------------      136   	cseg #00h at 010h
+00:0010 00-00'                    137   	dw	_int_dummy
+00:0012 00-00'                    138   	dw	_int_dummy
+00:0014 00-00'                    139   	dw	_int_dummy
+                                  140   
+  --------------------------      141   	cseg #00h at 018h
+00:0018 00-00'                    142   	dw	_int_dummy
+00:001A 00-00'                    143   	dw	_int_dummy
+                                  144   
+  --------------------------      145   	cseg #00h at 024h
+00:0024 00-00'                    146   	dw	_int_dummy
+                                  147   
+  --------------------------      148   	cseg #00h at 034h
+00:0034 00-00'                    149   	dw	_int_dummy
+00:0036 00-00'                    150   	dw	_int_dummy
+                                  151   
+  --------------------------      152   	cseg #00h at 040h
+00:0040 00-00'                    153   	dw	_int_dummy
+                                  154   
+  --------------------------      155   	cseg #00h at 04Ch
+00:004C 00-00'                    156   	dw	_int_dummy
+00:004E 00-00'                    157   	dw	_int_dummy
+                                  158   
+  --------------------------      159   	cseg #00h at 058h
+00:0058 00-00'                    160   	dw	_int_dummy
+00:005A 00-00'                    161   	dw	_int_dummy
+00:005C 00-00'                    162   	dw	_int_dummy
+00:005E 00-00'                    163   	dw	_int_dummy
+00:0060 00-00'                    164   	dw	_int_dummy
+                                  165   
+  --------------------------      166   	cseg #00h at 06Ah
+00:006A 00-00'                    167   	dw	_int_dummy
+                                  168   
+  --------------------------      169   	cseg #00h at 06Eh
+00:006E 00-00'                    170   	dw	_int_dummy
+00:0070 00-00'                    171   	dw	_int_dummy
+                                  172   
+  --------------------------      173   	cseg #00h at 076h
+00:0076 00-00'                    174   	dw	_int_2Hz
+                                  175   
+                                  176   	end
+
+
+
+  Target       : ML610102 (nX-U8/100)
+  Memory Model : SMALL
+  Data   Model : NEAR
+  ROM WINDOW   : (not specified)
+  Internal RAM : E000H to E0FFH
+
+  Errors   : 0
+  Warnings : 0  (/Wrpeast)
+  Lines    : 176

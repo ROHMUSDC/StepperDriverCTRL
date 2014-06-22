@@ -1,0 +1,1 @@
+ /STACK(128) /D /SD /NS /CC _output\_obj\main.obj _output\_obj\ml610102.obj ,q102_stepperdriver.abs,,;
